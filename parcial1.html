@@ -58,4 +58,135 @@
             text-align: center;
             font-size: 2rem;
             margin-bottom: 30px;
-            text-transform
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Grid para las 8 tareas */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        /* Ajustes responsivos */
+        @media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+
+        .card {
+            background: var(--verde-oscuro);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid var(--verde-lima);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: var(--verde-principal);
+            box-shadow: 0 15px 30px rgba(149, 213, 178, 0.2);
+        }
+
+        .card h3 {
+            margin: 0 0 10px 0;
+            color: var(--verde-lima);
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--texto-suave);
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            color: var(--verde-lima);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            border: 1px solid var(--verde-lima);
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card a:hover {
+            background: var(--verde-lima);
+            color: var(--verde-fondo);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #050f0a;
+            margin-top: 60px;
+            border-top: 1px solid var(--verde-principal);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Evidencias: Parcial 1</h1>
+        <p>Programación Web II - José Alberto Segura</p>
+        <a href="index.html" class="btn-regresar">← Volver al Inicio</a>
+    </header>
+
+    <div class="container">
+        <h2>Listado de Tareas</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Tarea 01</h3>
+                <p>Instalación de XAMPP y configuración del entorno PHP.</p>
+                <a href="#">Ver Archivo →</a>
+            </div>
+            <div class="card">
+                <h3>Tarea 02</h3>
+                <p>Uso de variables y tipos de datos en PHP.</p>
+                <a href="#">Ver Archivo →</a>
+            </div>
+            <div class="card">
+                <h3>Tarea 03</h3>
+                <p>Estructuras de decisión: Ejercicios con If y Switch.</p>
+                <a href="#">Ver Archivo →</a>
+            </div>
+            <div class="card) ">
+                <h3>Tarea 04</h3>
+                <p>Ciclos y bucles: Generación de tablas dinámicas.</p>
+                <a href="#">Ver Archivo →</a>
+            </div>
+            <div class="card">
+                <h3>Tarea 05</h3>
+                <p>Manejo de formularios: Captura de datos con POST.</p>
+                <a href="#">Ver Archivo →</a>
+            </div>
+            <div class="card">
+                <h3>Tarea 06</h3>
+                <p>Funciones personalizadas y modularización.</p>
+                <a href="#">Ver Archivo →</a>
+            </div>
+            <div class="card">
+                <h3>Tarea 07</h3>
+                <p>Arreglos unidimensionales y multidimensionales.</p>
+                <a href="#">Ver Archivo →</a>
+            </div>
+            <div class="card">
+                <h3>Tarea 08</h3>
+                <p>Proyecto final del parcial: Aplicación CRUD básica.</p>
+                <a href="#">Ver Archivo →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Portafolio de Evidencias - Segura Menchaca José Alberto</p>
+    </footer>
+
+</body>
+</html>
