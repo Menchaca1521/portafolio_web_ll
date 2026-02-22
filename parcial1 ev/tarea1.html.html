@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla dinamica</title>
+    <style>
+        .tabla{
+            border: 1px solid blue; 
+
+        }
+        td{
+
+            width: 100px;
+            height: 100px;
+            border: 1px solid black; 
+            text-align: center;
+        }
+        .contenedor{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #btn{
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 12px;
+        }
+        img{
+            height: 80px;
+            width: 80px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <button id="btn" onclick="GenerarTablaImg()">crear tabla</button>
+        <div id="tabla_dinamica">
+            <table class="tabla"><!--tabla-->
+            <tr><!--columnas-->
+                <td></td><!--filas-->
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>       
+             </table>
+        
+        </div>
+    </div>
+    <script>
+        function GenerarTablaImg(){
+            let i = 0, j = 0, cont = 0;
+            let num = [1,2,3,4,5,6,7,8,9];
+            let check=[0,0,0,0,0,0,0,0,0,0];
+            let n=0;
+            for(i=0;i<9;i++){
+                do{
+                    n = Math.floor(Math.random()*9)
+                }while(check[n]!=0);
+                num[i]=n+1;
+                check[n]=1;//ya lo asigne
+
+            }
+
+            let txt_html=`
+             <table class="tabla"><!--tabla--> `;
+             for(i=0;i<3;i++){
+                txt_html+="<tr>"
+                for(j=0;j<3;j++,cont++){
+                    txt_html+="<td><img src ='"+num[cont]+ ".jpg'> </td>"
+
+                }
+                txt_html+="</tr>";
+             }
+             txt_html+="</table>";
+             document.getElementById("tabla_dinamica").innerHTML=txt_html;
+        }
+
+    </script>
+
+</body>
+</html>
