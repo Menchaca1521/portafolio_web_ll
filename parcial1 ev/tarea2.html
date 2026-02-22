@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio</title>
+</head>
+<body>
+    <p>haz clic en el boton e ingresa tu cadena.</p>
+    <button onclick="myFunction()">touch me hard!</button>
+    <p id="demo"></p>
+    <script>
+function myFunction() {
+    let cadena = prompt("preciona enter para confirmar cadena", "Harry Potter");
+    let palabras = cadena.split(" "); // ← CAMBIO: separar por palabras
+    let token ="";
+    let txt ="";
+    let pal;
+    let car1,car2;
+    if (cadena != null) {
+       document.getElementById("demo").innerHTML ="Mi cadena es: " + cadena ;
+         alert( palabras);
+       for(token in palabras){ 
+            car1 = palabras[token].charAt(0).toUpperCase();
+            car2 = palabras[token].charAt(palabras[token].length - 1).toUpperCase(); // ← CAMBIO: última letra
+            pal = car1 + palabras[token].substring(1, palabras[token].length - 1) + car2;
+            alert(pal);
+        } 
+    }
+}
+</script>
+</body>
+</html>
