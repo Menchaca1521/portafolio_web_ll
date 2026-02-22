@@ -1,50 +1,185 @@
-<style>
-    /* Añade esto a tus estilos existentes */
-    .seccion-acceso {
-        text-align: center;
-        margin: 50px 0;
-    }
-    .banner-click {
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-        border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        transition: transform 0.3s;
-        max-width: 600px;
-        width: 100%;
-    }
-    .banner-click:hover {
-        transform: scale(1.02);
-    }
-    .banner-click img {
-        width: 100%;
-        display: block;
-        filter: brightness(70%);
-    }
-    .banner-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 2rem;
-        font-weight: bold;
-        text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-    }
-</style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Programación Web II</title>
+    <style>
+        :root {
+            --morado-oscuro: #4b0082;
+            --morado-claro: #6a0dad;
+            --dorado: #ffcc00;
+            --fondo: #f5f0fa;
+            --texto: #2d2d2d;
+            --blanco: #ffffff;
+        }
 
-<div class="container">
-    <section id="inicio">
-        <h2>Bienvenido a mi Portafolio</h2>
-        <p>Selecciona un parcial para ver las evidencias correspondientes:</p>
-        
-        <div class="seccion-acceso">
-            <a href="parcial1.html" class="banner-click">
-                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Parcial 1">
-                <div class="banner-text">PARCIAL 1</div>
-            </a>
-            <p>Haz clic en la imagen para ver los 8 proyectos del primer bloque.</p>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--texto);
+            background-color: var(--fondo);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: var(--morado-oscuro);
+            color: var(--blanco);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--dorado);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: var(--morado-claro);
+            padding: 0.8rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--dorado);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1; /* Empuja el footer hacia abajo */
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--morado-oscuro);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo de la Tarjeta/Banner de Parcial */
+        .parcial-link {
+            position: relative;
+            display: block;
+            margin: 40px auto;
+            max-width: 500px;
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            text-decoration: none;
+            box-shadow: 0 15px 35px rgba(75, 0, 130, 0.3);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .parcial-link:hover {
+            transform: scale(1.05);
+        }
+
+        .parcial-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(60%) saturate(120%);
+            transition: 0.5s;
+        }
+
+        .parcial-link:hover img {
+            filter: brightness(40%) saturate(150%);
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+
+        .overlay-text h3 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-bottom: 3px solid var(--dorado);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .overlay-text p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        footer {
+            background: var(--morado-oscuro);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            border-top: 4px solid var(--dorado);
+        }
+
+        footer h2 {
+            color: var(--dorado);
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mi Trayecto Académico</h1>
+    </header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="parcial1.html">Parcial 1</a>
+        <a href="#">Parcial 2</a>
+        <a href="#">Parcial 3</a>
+    </nav>
+
+    <div class="container" id="inicio">
+        <h2>Bienvenido al Portafolio</h2>
+        <p>Explora las evidencias y proyectos desarrollados durante el curso de Programación Web II.</p>
+
+        <a href="parcial1.html" class="parcial-link">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Evidencias Parcial 1">
+            <div class="overlay-text">
+                <h3>Parcial 1</h3>
+                <p>Ver 8 evidencias de PHP & HTML</p>
+            </div>
+        </a>
+    </div>
+
+    <footer>
+        <h2>Portafolio Programación Web II</h2>
+        <p>Segura Menchaca José Alberto</p>
+        <div style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">
+            © 2026 - Universidad de Ingeniería
         </div>
-    </section>
-</div>
+    </footer>
+
+</body>
+</html>
