@@ -4,24 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evidencias Parcial 1 - José Alberto</title>
-    </head>
-<body>
-    <header>
-        <h1>Evidencias del Primer Parcial</h1>
-        <a href="index.html" style="color: var(--dorado); text-decoration: none;">← Volver al Inicio</a>
-    </header>
+    <style>
+        :root {
+            --verde-fondo: #0a1a12; /* Verde casi negro */
+            --verde-oscuro: #1b4332; /* Verde bosque */
+            --verde-principal: #2d6a4f; /* Verde esmeralda */
+            --verde-lima: #95d5b2; /* Verde claro para resaltar */
+            --blanco: #ffffff;
+            --texto-suave: #d8f3dc;
+        }
 
-    <div class="container">
-        <section>
-            <div class="grid">
-                <div class="card"><h3>Proyecto 01</h3><p>Descripción...</p><a href="#">Ver detalles →</a></div>
-                <div class="card"><h3>Proyecto 02</h3><p>Descripción...</p><a href="#">Ver detalles →</a></div>
-                </div>
-        </section>
-    </div>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--verde-fondo);
+            color: var(--texto-suave);
+        }
 
-    <footer>
-        <p>Segura Menchaca José Alberto - Programación Web II</p>
-    </footer>
-</body>
-</html>
+        header {
+            background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-fondo));
+            color: var(--blanco);
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--verde-lima);
+        }
+
+        .btn-regresar {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background-color: var(--verde-lima);
+            color: var(--verde-fondo);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-regresar:hover {
+            background-color: var(--blanco);
+            transform: translateX(-5px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            color: var(--verde-lima);
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-transform
